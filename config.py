@@ -7,6 +7,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config:
     # 设置每次请求结束后自动提交数据库的变化
     SQLALCHEMY_COMMIT_ON_TEARDOWM = True
+    SECRET_KEY = 'SDFEFEF'
 
     @staticmethod
     def init_app(app):
@@ -15,7 +16,7 @@ class Config:
 # 开发模式的配置
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "mysql://root:1234@localhost/myflasky_database"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:@localhost/myflasky_database"
 
 # 测试模式的配置
 class TestingConfig(Config):

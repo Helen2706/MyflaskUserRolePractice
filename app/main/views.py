@@ -7,6 +7,7 @@ from .. import db
 
 @main.route('/')
 def index():
+    Role.insert_roles()
     role = Role.query.filter_by(name='User').first()
     user = User.query.filter_by(role=role).all()
     for user1 in user:
